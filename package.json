@@ -1,0 +1,23 @@
+{
+  "name": "phaser-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:server": "nodemon server.js",
+    "watch:src": "nodemon --watch src --exec 'npm run bundle'",
+    "bundle": "browserify src/index.js -o static/bundle.js -t babelify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.6.0"
+  }
+}
